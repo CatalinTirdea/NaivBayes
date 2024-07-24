@@ -41,7 +41,7 @@ def normalize_data(values):
     for element in values:
         normalised_values.append(element / valuesum)
 
-    print(normalised_values)
+    
     return normalised_values
 
 
@@ -70,6 +70,26 @@ def read_and_process_data(datafile):
 
     return data
 
+"""
+This functions takes the data and a ratio and splits it.
+Ratio must be between 0 and 1.
+The smaller the ratio, the more train data you will have
+"""
+def split_data(data,ratio):
+    # If value is not between(0,1) throw error
+    if ratio <= 0 and ratio >=1:
+        assert("Value must be between (0,1)")
+    
+    # Calculate the index
+    index = int(len(data) * ratio)
+    # Split the data 
+    train_data = data[index:]
+    test_data = data[:index]
+    
+    return train_data,test_data
+
 
 data = read_and_process_data(argv[1])
-print(data)
+train_data,test_data = split_data(data,0.2)
+print(len(train_data),len(test_data))
+print(len(data))

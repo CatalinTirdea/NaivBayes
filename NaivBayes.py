@@ -88,8 +88,21 @@ def split_data(data,ratio):
     
     return train_data,test_data
 
+"""
+Function that takes the data and splits the labels 
+"""
+def split_labels(data):
+    # Take all the data exept the last element on each row
+    x_data = [row[:-1] for row in data]
+    # Take only the last element of each row
+    y_data = [row[-1] for row in data]
+    
+    return x_data,y_data
+
+
+
 
 data = read_and_process_data(argv[1])
 train_data,test_data = split_data(data,0.2)
-print(len(train_data),len(test_data))
-print(len(data))
+
+x_train,y_train = split_labels(train_data)

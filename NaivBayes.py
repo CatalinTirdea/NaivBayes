@@ -26,15 +26,13 @@ def class_encoder(data):
 
 
 """
-Function that normalises the values using the Manhattan distance
+Function that normalises the values using the Manhattan distance(L1)
 
 """
 
 
 def normalize_data(values):
-    valuesum = 0.0
-    for value in values:
-        valuesum += value
+    valuesum = np.sum(values)
 
     normalised_values = []
 
@@ -99,10 +97,20 @@ def split_labels(data):
     
     return x_data,y_data
 
-
+"""
+Function that calculates the unique probabilities{ Ex.: P(A) }
+"""
+def calculate_unique_probabilities(y_label):
+    # Get all the classes and how many times they appear
+    classes,counts = np.unique(y_label,return_counts=True)
+    # Calculate the probabilities
+    probabilities = counts / len(y_train)
+    # Return a dictionary in the form {Class: Probability}
+    return dict(zip(classes,probabilities))
 
 
 data = read_and_process_data(argv[1])
+
 train_data,test_data = split_data(data,0.2)
 
 x_train,y_train = split_labels(train_data)

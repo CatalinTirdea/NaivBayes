@@ -12,25 +12,25 @@ You can install it using pip:
 
 ```bash
 pip install numpy
-
+```
 
 Usage
 
 To run the program, use the following command:
 
-bash
+```bash
 
 python3 NaivBayes.py <datafile> <ratio>
 
     <datafile>: Path to the CSV file containing the dataset.
     <ratio>: Ratio to split the data into training and test sets (must be between 0 and 1).
-
+```
 Example Command
 
-bash
+```bash
 
 python3 NaivBayes.py pima-indians-diabetes.csv 0.2
-
+```
 This command will split the dataset pima-indians-diabetes.csv with 20% of the data used as the test set and 80% as the training set.
 Functions Overview
 normalize_data(values)
@@ -66,16 +66,16 @@ Here's an example of how to use the classifier:
 
     Ensure you have the required library installed:
 
-    bash
+   ``` bash
 
 pip install numpy
 
 Prepare your dataset in CSV format. The last column should be the class label.
 
 Run the Naive Bayes classifier with your dataset:
-
-bash
+```
+```bash
 
 python3 NaivBayes.py your_dataset.csv 0.2
-
+```
 The program will output the accuracy of the model on the test set.

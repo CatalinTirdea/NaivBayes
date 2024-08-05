@@ -32,39 +32,45 @@ Example Command
 python3 NaivBayes.py pima-indians-diabetes.csv 0.2
 ```
 This command will split the dataset pima-indians-diabetes.csv with 20% of the data used as the test set and 80% as the training set.
-Functions Overview
-normalize_data(values)
 
+
+Functions Overview:
+
+
+`normalize_data(values)`
 Normalizes the feature values using the Manhattan distance (L1 norm).
-read_and_process_data(datafile)
 
+`read_and_process_data(datafile)`
 Reads and processes the data from a CSV file, normalizing the feature values.
-split_data(data, ratio)
 
+`split_data(data, ratio)`
 Splits the data into training and test sets based on the given ratio.
-split_labels(data)
 
+`split_labels(data)`
 Separates the features and labels from the dataset.
-calculate_unique_probabilities(y_label)
 
+`calculate_unique_probabilities(y_label)`
 Calculates the prior probabilities for each class.
-calculate_conditional_probabilities(x_data, y_data)
 
+
+`calculate_conditional_probabilities(x_data, y_data)`
 Calculates the conditional probabilities for each feature given each class.
-train_naiv_bayes(x_data, y_data)
 
+
+`train_naiv_bayes(x_data, y_data)`
 Trains the Naive Bayes model by calculating the unique and conditional probabilities.
-predict_naiv_bayes(unique_prob, conditional_prob, x_test)
 
+
+`predict_naiv_bayes(unique_prob, conditional_prob, x_test)`\
 Predicts the class labels for the test set based on the trained model.
-calculate_model_accuracy(y_pred, y_test)
 
+`calculate_model_accuracy(y_pred, y_test)`
 Calculates the accuracy of the model's predictions.
-Example
+
+
+`Example`
 
 Here's an example of how to use the classifier:
-
-    Ensure you have the required library installed:
 
    ``` bash
 
